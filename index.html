@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriPlan</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans min-h-screen flex">
+
+    <!-- Sidebar Navigation -->
+    <aside class="w-64 bg-white border-r flex flex-col justify-between hidden md:flex sticky top-0 h-screen">
+        <div>
+            <!-- Logo -->
+            <div class="p-6 flex items-center gap-3 border-b">
+                <div class="bg-emerald-600 text-white p-2 rounded-xl">
+                    <i class="fa-solid fa-leaf"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg text-gray-900 leading-tight">NutriPlan</h1>
+                    <p class="text-xs text-gray-400">Your Wellness Journey</p>
+                </div>
+            </div>
+
+            <!-- Menu -->
+            <div class="p-4">
+                <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3 px-3">Main Menu</p>
+                <nav class="space-y-1">
+                    <button onclick="router.navigateTo('home')" id="nav-home" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-emerald-600 bg-emerald-50 transition">
+                        <i class="fa-solid fa-utensils"></i> Meals & Recipes
+                    </button>
+                    <button onclick="router.navigateTo('scanner')" id="nav-scanner" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-gray-600 hover:bg-gray-100 transition">
+                        <i class="fa-solid fa-barcode"></i> Product Scanner
+                    </button>
+                    <button onclick="router.navigateTo('foodlog')" id="nav-foodlog" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium text-gray-600 hover:bg-gray-100 transition">
+                        <i class="fa-solid fa-calendar-days"></i> Food Log
+                    </button>
+                </nav>
+            </div>
+        </div>
+
+        <!-- User Profile Footer -->
+        <div class="p-4 border-t flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center font-bold">م</div>
+                <div>
+                    <h4 class="text-sm font-bold text-gray-800">انجى بطرس
+                        
+                    </h4>
+                    <p class="text-xs text-emerald-600 font-medium">Premium Member</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content Wrapper -->
+    <div class="flex-1 flex flex-col min-w-0">
+        <!-- Mobile Header -->
+        <header class="bg-white border-b md:hidden px-4 py-3 flex justify-between items-center">
+            <h1 class="font-bold text-emerald-600"><i class="fa-solid fa-leaf"></i> NutriPlan</h1>
+            <div class="flex gap-2">
+                <button onclick="router.navigateTo('home')" class="p-2 text-sm">Meals</button>
+                <button onclick="router.navigateTo('scanner')" class="p-2 text-sm">Scanner</button>
+                <button onclick="router.navigateTo('foodlog')" class="p-2 text-sm">Log</button>
+            </div>
+        </header>
+
+        <!-- Dynamic View Container -->
+        <main class="flex-grow p-6 md:p-10 max-w-7xl w-full mx-auto">
+            <div id="app-view"></div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
